@@ -21,6 +21,7 @@ using FileStream in_txt = File.Open(in_file_name, FileMode.Open, FileAccess.Read
 using StreamReader reader = new(in_txt);
 
 using FileStream out_txt = File.Open(out_file_name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+out_txt.SetLength(0);
 using StreamWriter writer = new(out_txt);
 
 while (true)
@@ -43,3 +44,4 @@ while (true)
 
 await writer.FlushAsync();
 await out_txt.FlushAsync();
+Console.WriteLine("处理完成");
