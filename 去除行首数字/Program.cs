@@ -29,16 +29,22 @@ while (true)
 	string? line = await reader.ReadLineAsync();
 	if (line == null)
 	{
+		// 读取到文件尾了，退出循环
 		break;
 	}
 
 	int index = line.IndexOf(" ");
 	if (index == -1)
 	{
+		// 没有找到空格，说明此行只含有一个行号，写入空行
+		Console.WriteLine();
+		await writer.WriteLineAsync();
 		continue;
 	}
 
+	// 找到空格了，从空格开始截取后面的内容
 	line = line[index..];
+	Console.WriteLine(line);
 	await writer.WriteLineAsync(line);
 }
 
