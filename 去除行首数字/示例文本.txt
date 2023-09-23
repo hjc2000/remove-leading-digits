@@ -1,0 +1,17 @@
+﻿17 vddcore: regulator-vddcore {
+18 compatible = "regulator-fixed";
+19 regulator-name = "vddcore";
+20 regulator-min-microvolt = <1200000>;
+21 regulator-max-microvolt = <1350000>;
+22 regulator-off-in-suspend;
+23 regulator-always-on;
+24 };
+25
+26 v3v3: regulator-3p3v {
+27 compatible = "regulator-fixed";
+28 regulator-name = "v3v3";
+29 regulator-min-microvolt = <3300000>;
+30 regulator-max-microvolt = <3300000>;
+31 regulator-off-in-suspend;
+32 regulator-always-on;
+33 };
