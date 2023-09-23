@@ -44,6 +44,7 @@ while (true)
 
 	// 找到空格了，从空格开始截取后面的内容
 	line = line[index..];
+	line = line.Trim();
 	Console.WriteLine(line);
 	await writer.WriteLineAsync(line);
 }
